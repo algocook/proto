@@ -25,7 +25,17 @@ message PostUserResponse {
     string error = 2;
 }
 
+message CheckUsernameRequest {
+    string username = 1;
+}
+
+message CheckUsernameResponse {
+    bool isAvailable = 1;
+    string error = 2;
+}
+
 service Users {
     rpc GetUser (GetUserRequest) returns (GetUserResponse);
     rpc PostUser (PostUserRequest) returns (PostUserResponse);
+    rpc CheckUsername (CheckUsernameRequest) returns (CheckUsernameResponse);
 }
