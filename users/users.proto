@@ -10,15 +10,19 @@ message GetUserResponse {
     int64 id = 1;
     string username = 2;
     string title = 3;
+    string description = 4;
+    string error = 5;
 }
 
 message PostUserRequest {
     string username = 1;
     string title = 2;
+    string description = 3;
 }
 
 message PostUserResponse {
     int64 id = 1;
+    string error = 2;
 }
 
 service Users {
