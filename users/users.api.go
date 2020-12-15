@@ -18,7 +18,7 @@ func NewClient() (Client, error) {
 		grpc.WithInsecure(),
 	}
 
-	con, err := grpc.Dial("localhost:5300", opts...)
+	con, err := grpc.Dial("users:5300", opts...)
 	return Client{con}, err
 }
 
