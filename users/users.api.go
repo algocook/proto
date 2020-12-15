@@ -3,7 +3,6 @@ package users
 import (
 	context "context"
 
-	pb "github.com/algocook/proto/users"
 	grpc "google.golang.org/grpc"
 )
 
@@ -33,8 +32,8 @@ type User struct {
 
 // GetUser function
 func (client *Client) GetUser(id int64) User {
-	cli := pb.NewUsersClient(client.conn)
-	request := pb.GetUserRequest{
+	cli := NewUsersClient(client.conn)
+	request := GetUserRequest{
 		Id: id,
 	}
 	response, err := cli.GetUser(context.Background(), &request)
@@ -55,8 +54,8 @@ func (client *Client) GetUser(id int64) User {
 
 // PostUser function
 func (client *Client) PostUser(username string, title string, description string) User {
-	cli := pb.NewUsersClient(client.conn)
-	request := pb.PostUserRequest{
+	cli := NewUsersClient(client.conn)
+	request := PostUserRequest{
 		Username:    username,
 		Title:       title,
 		Description: description,
@@ -87,8 +86,8 @@ type IsAvailable struct {
 
 // CheckUsername method
 func (client *Client) CheckUsername(username string) IsAvailable {
-	cli := pb.NewUsersClient(client.conn)
-	request := pb.CheckUsernameRequest{
+	cli := NewUsersClient(client.conn)
+	request := CheckUsernameRequest{
 		Username: username,
 	}
 
