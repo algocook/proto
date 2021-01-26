@@ -43,7 +43,7 @@ type RecipeJSON struct {
 
 // GetRecipe function
 func (client *Client) GetRecipe(id int64) RecipeJSON {
-	cli := NewUsersClient(client.conn)
+	cli := NewRecipesClient(client.conn)
 	request := GetRecipeRequest{
 		Id: id,
 	}
@@ -75,7 +75,7 @@ func (client *Client) GetRecipe(id int64) RecipeJSON {
 
 // PostRecipe function
 func (client *Client) PostRecipe(recipeInfo RecipeInfoJSON) RecipeJSON {
-	cli := NewUsersClient(client.conn)
+	cli := NewRecipesClient(client.conn)
 
 	ingredients := []*Ingredient{}
 	for _, element := range recipeInfo.Ingredients {
