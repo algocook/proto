@@ -36,7 +36,7 @@ message PostRecipeResponse {
     string error = 2;
 }
 
-service Users {
+service Recipes {
     rpc GetRecipe (GetRecipeRequest) returns (GetRecipeResponse);
     rpc PostRecipe (PostRecipeRequest) returns (PostRecipeResponse);
 }

@@ -437,17 +437,17 @@ var file_recipes_proto_rawDesc = []byte{
 	0x3a, 0x0a, 0x12, 0x50, 0x6f, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x32, 0x92, 0x01, 0x0a, 0x05,
-	0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x42, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x52, 0x65, 0x63, 0x69,
-	0x70, 0x65, 0x12, 0x19, 0x2e, 0x72, 0x65, 0x63, 0x69, 0x70, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x74,
-	0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e,
-	0x72, 0x65, 0x63, 0x69, 0x70, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70,
-	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x45, 0x0a, 0x0a, 0x50, 0x6f, 0x73,
-	0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x12, 0x1a, 0x2e, 0x72, 0x65, 0x63, 0x69, 0x70, 0x65,
-	0x73, 0x2e, 0x50, 0x6f, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x72, 0x65, 0x63, 0x69, 0x70, 0x65, 0x73, 0x2e, 0x50, 0x6f,
-	0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x32, 0x94, 0x01, 0x0a, 0x07,
+	0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x73, 0x12, 0x42, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x52, 0x65,
+	0x63, 0x69, 0x70, 0x65, 0x12, 0x19, 0x2e, 0x72, 0x65, 0x63, 0x69, 0x70, 0x65, 0x73, 0x2e, 0x47,
+	0x65, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x1a, 0x2e, 0x72, 0x65, 0x63, 0x69, 0x70, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x63,
+	0x69, 0x70, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x45, 0x0a, 0x0a, 0x50,
+	0x6f, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x12, 0x1a, 0x2e, 0x72, 0x65, 0x63, 0x69,
+	0x70, 0x65, 0x73, 0x2e, 0x50, 0x6f, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x72, 0x65, 0x63, 0x69, 0x70, 0x65, 0x73, 0x2e,
+	0x50, 0x6f, 0x73, 0x74, 0x52, 0x65, 0x63, 0x69, 0x70, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -477,10 +477,10 @@ var file_recipes_proto_depIdxs = []int32{
 	2, // 1: recipes.Recipe.recipe_info:type_name -> recipes.RecipeInfo
 	3, // 2: recipes.GetRecipeResponse.recipe:type_name -> recipes.Recipe
 	2, // 3: recipes.PostRecipeRequest.recipeInfo:type_name -> recipes.RecipeInfo
-	0, // 4: recipes.Users.GetRecipe:input_type -> recipes.GetRecipeRequest
-	5, // 5: recipes.Users.PostRecipe:input_type -> recipes.PostRecipeRequest
-	4, // 6: recipes.Users.GetRecipe:output_type -> recipes.GetRecipeResponse
-	6, // 7: recipes.Users.PostRecipe:output_type -> recipes.PostRecipeResponse
+	0, // 4: recipes.Recipes.GetRecipe:input_type -> recipes.GetRecipeRequest
+	5, // 5: recipes.Recipes.PostRecipe:input_type -> recipes.PostRecipeRequest
+	4, // 6: recipes.Recipes.GetRecipe:output_type -> recipes.GetRecipeResponse
+	6, // 7: recipes.Recipes.PostRecipe:output_type -> recipes.PostRecipeResponse
 	6, // [6:8] is the sub-list for method output_type
 	4, // [4:6] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -607,108 +607,108 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// UsersClient is the client API for Users service.
+// RecipesClient is the client API for Recipes service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type UsersClient interface {
+type RecipesClient interface {
 	GetRecipe(ctx context.Context, in *GetRecipeRequest, opts ...grpc.CallOption) (*GetRecipeResponse, error)
 	PostRecipe(ctx context.Context, in *PostRecipeRequest, opts ...grpc.CallOption) (*PostRecipeResponse, error)
 }
 
-type usersClient struct {
+type recipesClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUsersClient(cc grpc.ClientConnInterface) UsersClient {
-	return &usersClient{cc}
+func NewRecipesClient(cc grpc.ClientConnInterface) RecipesClient {
+	return &recipesClient{cc}
 }
 
-func (c *usersClient) GetRecipe(ctx context.Context, in *GetRecipeRequest, opts ...grpc.CallOption) (*GetRecipeResponse, error) {
+func (c *recipesClient) GetRecipe(ctx context.Context, in *GetRecipeRequest, opts ...grpc.CallOption) (*GetRecipeResponse, error) {
 	out := new(GetRecipeResponse)
-	err := c.cc.Invoke(ctx, "/recipes.Users/GetRecipe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/recipes.Recipes/GetRecipe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *usersClient) PostRecipe(ctx context.Context, in *PostRecipeRequest, opts ...grpc.CallOption) (*PostRecipeResponse, error) {
+func (c *recipesClient) PostRecipe(ctx context.Context, in *PostRecipeRequest, opts ...grpc.CallOption) (*PostRecipeResponse, error) {
 	out := new(PostRecipeResponse)
-	err := c.cc.Invoke(ctx, "/recipes.Users/PostRecipe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/recipes.Recipes/PostRecipe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// UsersServer is the server API for Users service.
-type UsersServer interface {
+// RecipesServer is the server API for Recipes service.
+type RecipesServer interface {
 	GetRecipe(context.Context, *GetRecipeRequest) (*GetRecipeResponse, error)
 	PostRecipe(context.Context, *PostRecipeRequest) (*PostRecipeResponse, error)
 }
 
-// UnimplementedUsersServer can be embedded to have forward compatible implementations.
-type UnimplementedUsersServer struct {
+// UnimplementedRecipesServer can be embedded to have forward compatible implementations.
+type UnimplementedRecipesServer struct {
 }
 
-func (*UnimplementedUsersServer) GetRecipe(context.Context, *GetRecipeRequest) (*GetRecipeResponse, error) {
+func (*UnimplementedRecipesServer) GetRecipe(context.Context, *GetRecipeRequest) (*GetRecipeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRecipe not implemented")
 }
-func (*UnimplementedUsersServer) PostRecipe(context.Context, *PostRecipeRequest) (*PostRecipeResponse, error) {
+func (*UnimplementedRecipesServer) PostRecipe(context.Context, *PostRecipeRequest) (*PostRecipeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PostRecipe not implemented")
 }
 
-func RegisterUsersServer(s *grpc.Server, srv UsersServer) {
-	s.RegisterService(&_Users_serviceDesc, srv)
+func RegisterRecipesServer(s *grpc.Server, srv RecipesServer) {
+	s.RegisterService(&_Recipes_serviceDesc, srv)
 }
 
-func _Users_GetRecipe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Recipes_GetRecipe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetRecipeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UsersServer).GetRecipe(ctx, in)
+		return srv.(RecipesServer).GetRecipe(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/recipes.Users/GetRecipe",
+		FullMethod: "/recipes.Recipes/GetRecipe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UsersServer).GetRecipe(ctx, req.(*GetRecipeRequest))
+		return srv.(RecipesServer).GetRecipe(ctx, req.(*GetRecipeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Users_PostRecipe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Recipes_PostRecipe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PostRecipeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UsersServer).PostRecipe(ctx, in)
+		return srv.(RecipesServer).PostRecipe(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/recipes.Users/PostRecipe",
+		FullMethod: "/recipes.Recipes/PostRecipe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UsersServer).PostRecipe(ctx, req.(*PostRecipeRequest))
+		return srv.(RecipesServer).PostRecipe(ctx, req.(*PostRecipeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _Users_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "recipes.Users",
-	HandlerType: (*UsersServer)(nil),
+var _Recipes_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "recipes.Recipes",
+	HandlerType: (*RecipesServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetRecipe",
-			Handler:    _Users_GetRecipe_Handler,
+			Handler:    _Recipes_GetRecipe_Handler,
 		},
 		{
 			MethodName: "PostRecipe",
-			Handler:    _Users_PostRecipe_Handler,
+			Handler:    _Recipes_PostRecipe_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
