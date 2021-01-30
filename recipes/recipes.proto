@@ -2,41 +2,53 @@ syntax = "proto3";
 
 package recipes;
 
-message GetRecipeRequest {
-    int64 id = 1;
-}
-
-message Ingredient {
-    string name = 1;
-    string value = 2;
-}
-
-message RecipeInfo {
-    string title = 1;
-    string description = 2;
-    repeated Ingredient ingredients = 3;
-}
+import "utils/utils.proto";
 
 message Recipe {
-    int64 id = 1;
-    RecipeInfo recipe_info = 2;
+    message ID {
+        string recipe_id = 1;
+        int64 owner_id = 2;
+    }
+    
+    message Info {
+        message Desc {
+            string title = 1;
+            string description = 2;
+        }
+
+        message Ingredient {
+            string name = 1;
+            double value = 2;
+            string measure = 3;
+        }
+
+        Desc desc = 1;
+        repeated Ingredient ingredients = 2;
+    }
+
+    ID id = 1;
+    Info info = 2;
 }
 
-message GetRecipeResponse {
-    Recipe recipe = 1;
-    string error = 2;
+message GetRecipeRequest {
+    Recipe.ID recipe_id = 1;
+}
+
+message DeleteRecipeRequest {
+    Recipe.ID recipe_id = 1;
 }
 
 message PostRecipeRequest {
-    RecipeInfo recipeInfo = 1;
+    Recipe.Info info = 1;
 }
 
-message PostRecipeResponse {
-    int64 id = 1;
-    string error = 2;
+message RecipeResponse {
+    Recipe recipe = 1;
+    utils.Error error = 2;
 }
 
 service Recipes {
-    rpc GetRecipe (GetRecipeRequest) returns (GetRecipeResponse);
-    rpc PostRecipe (PostRecipeRequest) returns (PostRecipeResponse);
+    rpc GetRecipe (GetRecipeRequest) returns (RecipeResponse);
+    rpc DeleteRecipe (DeleteRecipeRequest) returns (utils.Error);
+    rpc PostRecipe (PostRecipeRequest) returns (RecipeResponse);
 }
