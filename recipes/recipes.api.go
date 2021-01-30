@@ -3,7 +3,6 @@ package recipes
 import (
 	context "context"
 	"fmt"
-	"proto/utils"
 
 	grpc "google.golang.org/grpc"
 )
@@ -39,7 +38,7 @@ func (recipeClient *RecipeClient) GetRecipe(recipeID *Recipe_ID) *RecipeResponse
 
 	if err != nil {
 		return &RecipeResponse{
-			Error: &utils.Error{
+			Error: &Error{
 				ErrorCode: 1,
 				ErrorStr:  err.Error(),
 			},
@@ -61,7 +60,7 @@ func (recipeClient *RecipeClient) PostRecipe(recipeInfo *Recipe_Info) *RecipeRes
 
 	if err != nil {
 		return &RecipeResponse{
-			Error: &utils.Error{
+			Error: &Error{
 				ErrorCode: 1,
 				ErrorStr:  err.Error(),
 			},

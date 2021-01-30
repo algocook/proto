@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package utils;
-
-message Error {
-    int64 error_code = 1;
-    string error_str = 2;
-}

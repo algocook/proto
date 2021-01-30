@@ -1,8 +1,12 @@
 syntax = "proto3";
 
 package recipes;
+option go_package = "recipes;recipes";
 
-import "utils/utils.proto";
+message Error {
+    int64 error_code = 1;
+    string error_str = 2;
+}
 
 message Recipe {
     message ID {
@@ -44,11 +48,11 @@ message PostRecipeRequest {
 
 message RecipeResponse {
     Recipe recipe = 1;
-    utils.Error error = 2;
+    Error error = 2;
 }
 
 service Recipes {
     rpc GetRecipe (GetRecipeRequest) returns (RecipeResponse);
-    rpc DeleteRecipe (DeleteRecipeRequest) returns (utils.Error);
+    rpc DeleteRecipe (DeleteRecipeRequest) returns (Error);
     rpc PostRecipe (PostRecipeRequest) returns (RecipeResponse);
 }
