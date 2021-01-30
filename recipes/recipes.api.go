@@ -1,7 +1,7 @@
 package recipes
 
 import (
-	"algocook/proto/utils"
+	"proto/utils"
 	context "context"
 	"fmt"
 
