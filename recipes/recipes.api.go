@@ -1,9 +1,9 @@
 package recipes
 
 import (
-	"proto/utils"
 	context "context"
 	"fmt"
+	"proto/utils"
 
 	grpc "google.golang.org/grpc"
 )
@@ -20,7 +20,9 @@ func NewClient(port string) (RecipeClient, error) {
 	}
 
 	con, err := grpc.Dial(fmt.Sprintf("recipes:%s", port), opts...)
-	return Client{con}, err
+	return RecipeClient{
+		conn: con,
+	}, err
 }
 
 // GetRecipe function
@@ -39,8 +41,8 @@ func (recipeClient *RecipeClient) GetRecipe(recipeID *Recipe_ID) *RecipeResponse
 		return &RecipeResponse{
 			Error: &utils.Error{
 				ErrorCode: 1,
-				ErrorStr: err.Error()
-			}
+				ErrorStr:  err.Error(),
+			},
 		}
 	}
 
@@ -52,7 +54,7 @@ func (recipeClient *RecipeClient) PostRecipe(recipeInfo *Recipe_Info) *RecipeRes
 	client := NewRecipesClient(recipeClient.conn)
 
 	request := &PostRecipeRequest{
-		Info: recipeInfo
+		Info: recipeInfo,
 	}
 
 	response, err := client.PostRecipe(context.Background(), request)
@@ -61,8 +63,8 @@ func (recipeClient *RecipeClient) PostRecipe(recipeInfo *Recipe_Info) *RecipeRes
 		return &RecipeResponse{
 			Error: &utils.Error{
 				ErrorCode: 1,
-				ErrorStr: err.Error()
-			}
+				ErrorStr:  err.Error(),
+			},
 		}
 	}
 
