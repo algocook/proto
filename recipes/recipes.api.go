@@ -69,3 +69,25 @@ func (recipeClient *RecipeClient) PostRecipe(recipeInfo *Recipe_Info) *RecipeRes
 
 	return response
 }
+
+// DeleteRecipe method
+func (recipeClient *RecipeClient) DeleteRecipe(recipeID *Recipe_ID) *Error {
+	client := NewRecipesClient(recipeClient.conn)
+
+	// Создаем запрос
+	request := &DeleteRecipeRequest{
+		RecipeId: recipeID,
+	}
+
+	// Отправляем запрос
+	response, err := client.DeleteRecipe(context.Background(), request)
+
+	if err != nil {
+		return &Error{
+			ErrorCode: 1,
+			ErrorStr:  err.Error(),
+		}
+	}
+
+	return response
+}
