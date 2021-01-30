@@ -1,4 +1,4 @@
-module recipes
+module github.com/algocook/proto/recipes
 
 go 1.13
 
