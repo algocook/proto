@@ -3,6 +3,7 @@ package recipes
 import (
 	context "context"
 	"fmt"
+	"time"
 
 	grpc "google.golang.org/grpc"
 )
@@ -34,7 +35,9 @@ func (recipeClient *RecipeClient) GetRecipe(recipeID *Recipe_ID) *RecipeResponse
 	}
 
 	// Отправляем запрос
-	response, err := client.GetRecipe(context.Background(), request)
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	response, err := client.GetRecipe(ctx, request)
 
 	if err != nil {
 		return &RecipeResponse{
@@ -56,7 +59,9 @@ func (recipeClient *RecipeClient) PostRecipe(recipeInfo *Recipe_Info) *RecipeRes
 		Info: recipeInfo,
 	}
 
-	response, err := client.PostRecipe(context.Background(), request)
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	response, err := client.PostRecipe(ctx, request)
 
 	if err != nil {
 		return &RecipeResponse{
@@ -80,7 +85,9 @@ func (recipeClient *RecipeClient) DeleteRecipe(recipeID *Recipe_ID) *Error {
 	}
 
 	// Отправляем запрос
-	response, err := client.DeleteRecipe(context.Background(), request)
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	response, err := client.DeleteRecipe(ctx, request)
 
 	if err != nil {
 		return &Error{
