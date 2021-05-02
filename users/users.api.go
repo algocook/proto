@@ -12,22 +12,22 @@ type Client struct {
 }
 
 // NewClient init
-func NewClient() (Client, error) {
+func NewClient() (*Client, error) {
 	opts := []grpc.DialOption{
 		grpc.WithInsecure(),
 	}
 
 	con, err := grpc.Dial("users:5300", opts...)
-	return Client{con}, err
+	return &Client{con}, err
 }
 
 // User struct
 type User struct {
-	ID          int64  `json:"id"`
-	Username    string `json:"username"`
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	Error       string `json:"error"`
+	ID          int64  `json:"id,omitempty"`
+	Username    string `json:"username,omitempty"`
+	Title       string `json:"title,omitempty"`
+	Description string `json:"description,omitempty"`
+	Error       string `json:"error,omitempty"`
 }
 
 // GetUser function
@@ -38,6 +38,11 @@ func (client *Client) GetUser(id int64) User {
 	}
 	response, err := cli.GetUser(context.Background(), &request)
 
+	if response != nil && response.Error != "" {
+		return User{
+			Error: response.Error,
+		}
+	}
 	if err != nil {
 		return User{
 			Error: err.Error(),
@@ -53,7 +58,7 @@ func (client *Client) GetUser(id int64) User {
 }
 
 // PostUser function
-func (client *Client) PostUser(username string, title string, description string) User {
+func (client *Client) PostUser(username, title, description string) User {
 	cli := NewUsersClient(client.conn)
 	request := PostUserRequest{
 		Username:    username,
@@ -63,6 +68,11 @@ func (client *Client) PostUser(username string, title string, description string
 
 	response, err := cli.PostUser(context.Background(), &request)
 
+	if response != nil && response.Error != "" {
+		return User{
+			Error: response.Error,
+		}
+	}
 	if err != nil {
 		return User{
 			Error: err.Error(),
@@ -79,9 +89,9 @@ func (client *Client) PostUser(username string, title string, description string
 
 // IsAvailable struct
 type IsAvailable struct {
-	Username    string `json:"username"`
-	IsAvailable bool   `json:"is_available"`
-	Error       string `json:"error"`
+	Username    string `json:"username,omitempty"`
+	IsAvailable bool   `json:"is_available,omitempty"`
+	Error       string `json:"error,omitempty"`
 }
 
 // CheckUsername method
@@ -93,6 +103,11 @@ func (client *Client) CheckUsername(username string) IsAvailable {
 
 	response, err := cli.CheckUsername(context.Background(), &request)
 
+	if response != nil && response.Error != "" {
+		return IsAvailable{
+			Error: response.Error,
+		}
+	}
 	if err != nil {
 		return IsAvailable{
 			Error: err.Error(),
