@@ -1,11 +1,10 @@
 package recipes
 
 import (
-	context "context"
+	"context"
 	"fmt"
-	"time"
 
-	grpc "google.golang.org/grpc"
+	"google.golang.org/grpc"
 )
 
 // RecipeClient comment
@@ -14,13 +13,13 @@ type RecipeClient struct {
 }
 
 // NewClient init
-func NewClient(port string) (RecipeClient, error) {
+func NewClient(port string) (*RecipeClient, error) {
 	opts := []grpc.DialOption{
 		grpc.WithInsecure(),
 	}
 
 	con, err := grpc.Dial(fmt.Sprintf("recipes:%s", port), opts...)
-	return RecipeClient{
+	return &RecipeClient{
 		conn: con,
 	}, err
 }
@@ -35,9 +34,7 @@ func (recipeClient *RecipeClient) GetRecipe(recipeID *Recipe_ID) *RecipeResponse
 	}
 
 	// Отправляем запрос
-	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
-	defer cancel()
-	response, err := client.GetRecipe(ctx, request)
+	response, err := client.GetRecipe(context.Background(), request)
 
 	if err != nil {
 		return &RecipeResponse{
@@ -59,9 +56,7 @@ func (recipeClient *RecipeClient) PostRecipe(recipeInfo *Recipe_Info) *RecipeRes
 		Info: recipeInfo,
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
-	defer cancel()
-	response, err := client.PostRecipe(ctx, request)
+	response, err := client.PostRecipe(context.Background(), request)
 
 	if err != nil {
 		return &RecipeResponse{
@@ -85,9 +80,7 @@ func (recipeClient *RecipeClient) DeleteRecipe(recipeID *Recipe_ID) *Error {
 	}
 
 	// Отправляем запрос
-	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
-	defer cancel()
-	response, err := client.DeleteRecipe(ctx, request)
+	response, err := client.DeleteRecipe(context.Background(), request)
 
 	if err != nil {
 		return &Error{
